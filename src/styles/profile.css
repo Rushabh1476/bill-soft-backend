@@ -1,0 +1,52 @@
+.profile-container {
+  padding: 40px 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Quick Actions buttons row */
+.quick-actions {
+  display: flex;
+  justify-content: center;  /* center horizontally */
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.quick-btn {
+  flex: 1;
+  max-width: 250px;
+  background: #f3f6ff;
+  padding: 18px 22px;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(79, 110, 247, 0.15);
+  cursor: pointer;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  text-align: left;
+}
+
+.quick-btn:hover {
+  background: #e0e7ff;
+  box-shadow: 0 10px 22px rgba(79, 110, 247, 0.3);
+}
+
+.quick-btn h4 {
+  margin: 0 0 8px 0;
+  color: #2d3a8c;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.quick-btn p {
+  margin: 0;
+  font-size: 13px;
+  color: #5a5a5a;
+}
+
+/* Center wrapper for forms */
+.dashboard-wrapper {
+  display: flex;
+  justify-content: center;  /* horizontal center */
+  align-items: center;      /* vertical center */
+  min-height: 20px;
+}

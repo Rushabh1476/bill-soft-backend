@@ -1,0 +1,114 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          String   @id @default(cuid())
+  email       String   @unique
+  password    String
+  companyName String?  @map("company_name")
+  logoUrl     String?  @map("logo_url")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  customers Customer[]
+  products  Product[]
+  bills     Bill[]
+
+  @@map("users")
+}
+
+model Customer {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  name      String
+  email     String?
+  phone     String?
+  address   String?
+  gstNumber String?  @map("gst_number")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  user  User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bills Bill[]
+
+  @@map("customers")
+}
+
+model Product {
+  id          String   @id @default(cuid())
+  userId      String   @map("user_id")
+  name        String
+  description String?
+  price       Float
+  taxRate     Float?   @default(0) @map("tax_rate")
+  stock       Int?     @default(0)
+  category    String?
+  sku         String?
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  // Relations
+  user      User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  billItems BillItem[]
+
+  @@map("products")
+}
+
+model Bill {
+  id           String    @id @default(cuid())
+  userId       String    @map("user_id")
+  customerId   String    @map("customer_id")
+  billNumber   String    @unique @map("bill_number")
+  customerName String    @map("customer_name")
+  customerEmail String?  @map("customer_email")
+  status       BillStatus @default(DRAFT)
+  subtotal     Float
+  taxAmount    Float     @default(0) @map("tax_amount")
+  totalAmount  Float     @map("total_amount")
+  dueDate      DateTime? @map("due_date")
+  notes        String?
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime  @updatedAt @map("updated_at")
+
+  // Relations
+  user     User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  customer Customer  @relation(fields: [customerId], references: [id], onDelete: Restrict)
+  items    BillItem[]
+
+  @@map("bills")
+}
+
+model BillItem {
+  id          String @id @default(cuid())
+  billId      String @map("bill_id")
+  productId   String @map("product_id")
+  productName String @map("product_name")
+  quantity    Int
+  price       Float
+  total       Float
+
+  // Relations
+  bill    Bill    @relation(fields: [billId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id], onDelete: Restrict)
+
+  @@map("bill_items")
+}
+
+enum BillStatus {
+  DRAFT
+  PENDING
+  PAID
+  OVERDUE
+  CANCELLED
+}

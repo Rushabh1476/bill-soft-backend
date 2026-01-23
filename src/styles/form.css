@@ -1,0 +1,89 @@
+/* Container */
+.form-container {
+  width: 420px;
+  margin: 0 auto; /* center the form */
+}
+
+/* Form Title */
+.form-title {
+  text-align: center;
+  font-size: 22px;
+  margin-bottom: 18px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+/* Form Card */
+.form-card {
+  background: #f0f4ff; /* soft light blue */
+  padding: 32px 28px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Groups */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+.form-group input[type="password"],
+.form-group input[type="text"] {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #ccc;
+  font-size: 15px;
+  transition: border-color 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #4f6ef7;
+}
+
+/* Primary Button */
+.primary-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #4f6ef7;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.25s ease;
+  margin-top: 8px;
+}
+
+.primary-btn:hover {
+  background: #3b5bdb;
+}
+
+/* Quick Actions Box - Isko replace karein */
+.quick-actions {
+  display: flex;
+  flex-direction: row; /* Force karega ek line mein rehne ke liye */
+  gap: 15px; /* Buttons ke beech ka gap thoda kam kiya */
+  align-items: stretch; /* Dono boxes ki height barabar rakhega */
+  width: 100%; /* Poori width lega */
+  margin-top: 20px;
+}
+
+.action-box {
+  flex: 1; /* Dono buttons ko barabar jagah dega */
+  background-color: #6699ff;
+  color: white;
+  padding: 15px; /* Padding thodi kam ki taaki fit ho sake */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
