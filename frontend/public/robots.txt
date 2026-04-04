@@ -1,0 +1,17 @@
+# BillSoft - AGB Technologies
+# Robots.txt for https://billsoft.agbtechnologies.com
+
+# Allow all search engine crawlers
+User-agent: *
+Allow: /
+
+# Block crawling of dynamic login/app routes (no SEO value)
+Disallow: /login
+Disallow: /signup
+Disallow: /dashboard
+Disallow: /api/
+Disallow: /src/
+Disallow: /node_modules/
+
+# Sitemap location
+Sitemap: https://billsoft.agbtechnologies.com/sitemap.xml

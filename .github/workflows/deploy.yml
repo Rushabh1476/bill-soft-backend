@@ -1,0 +1,192 @@
+name: Deploy to VPS
+
+on:
+  push:
+    branches:
+      - main
+      - mehul
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Connectivity Diagnostic
+        run: |
+          echo "=== Diagnostic: Testing connection to VPS ==="
+          HOST_TO_CHECK=${{ secrets.VPS_HOST }}
+          PORT_TO_CHECK=${{ secrets.VPS_PORT || 22 }}
+          
+          if [ -z "$HOST_TO_CHECK" ]; then
+            echo "❌ ERROR: VPS_HOST secret is NOT set!"
+            exit 1
+          fi
+
+          echo "Checking resolution for host: $HOST_TO_CHECK"
+          # Try both nslookup and host
+          nslookup $HOST_TO_CHECK || echo "Warning: dns lookup failed"
+          
+          echo "Checking if port $PORT_TO_CHECK is open..."
+          # If nc fails, it's likely a firewall or wrong host/port
+          if ! nc -zv -w 10 $HOST_TO_CHECK $PORT_TO_CHECK; then
+             echo "❌ CRITICAL: Port $PORT_TO_CHECK at $HOST_TO_CHECK is NOT reachable from GitHub runner!"
+             echo "Is the VPS firewall (ufw/iptables) blocking GitHub's IP range?"
+             echo "Try adding 'sudo ufw allow 22/tcp' or your custom SSH port."
+             exit 1
+          fi
+          
+          echo "✅ TARGET REACHABLE. Proceeding..."
+          echo "=== Diagnostic End ==="
+
+      - name: Deploy with Auto-Rollback
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          password: ${{ secrets.VPS_PASSWORD }}
+          port: ${{ secrets.VPS_PORT || 22 }}
+          command_timeout: 30m
+          script: |
+            echo "=== BillSoft Auto-Deploy with Rollback ==="
+            set -e
+
+            DEPLOY_PATH="${{ secrets.VPS_DEPLOY_PATH || '~/billsoft' }}"
+            
+            # Ensure folder exists
+            mkdir -p $DEPLOY_PATH
+            cd $DEPLOY_PATH
+
+            # ── Step 1: Save current commit as rollback point ──
+            PREVIOUS_COMMIT=$(git rev-parse HEAD 2>/dev/null || echo "")
+            echo "Rollback point saved: $PREVIOUS_COMMIT"
+
+            # ── Step 2: Sync code ──
+            echo "=== Pulling latest code for $GITHUB_REF_NAME ==="
+            
+            # Ensure we are in a git repo
+            if [ ! -d ".git" ]; then
+              echo "Initializing new git repo in $DEPLOY_PATH..."
+              git init
+              git remote add origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/agbitsolutions/billsoft_saas.git
+            fi
+
+            git remote set-url origin https://x-access-token:${{ secrets.GH_PAT }}@github.com/agbitsolutions/billsoft_saas.git
+            
+            # Use the branch that triggered the action
+            git fetch origin ${{ github.ref_name }}
+            git reset --hard origin/${{ github.ref_name }}
+            
+            NEW_COMMIT=$(git rev-parse HEAD)
+            echo "Deploying commit: $NEW_COMMIT"
+
+            # ── Step 3: Deploy new code ──
+            deploy() {
+              echo "=== Creating Database Backup ==="
+              mkdir -p backups
+              
+              # Backup SQLite database
+              if [ -f "./backend/prisma/dev.db" ]; then
+                cp ./backend/prisma/dev.db ./backups/db_backup_$(date +%Y%m%d_%H%M%S).db || true
+              fi
+
+              # Legacy postgres check (keeping for safety if user switches back)
+              if [ "$(docker ps -q -f name=billsoft-db)" ]; then
+                echo "Backing up PostgreSQL database..."
+                docker exec billsoft-db pg_dump -U postgres -h 127.0.0.1 billsoft_db > ./backups/db_backup_postgresql_$(date +%Y%m%d_%H%M%S).sql || true
+              fi
+
+              echo "=== Building and starting containers ==="
+              docker compose down --remove-orphans || true
+              
+              # Pull images if pre-built, or build locally
+              docker compose build
+              docker compose up -d --force-recreate
+              
+              echo "=== Syncing Super Admin Credentials ==="
+              docker exec billsoft-backend npm run seed:admins || true
+              
+              docker image prune -f
+            }
+
+            # ── Step 4: Health check ──
+            health_check() {
+              echo "=== Running health check (waiting 40s) ==="
+              sleep 40
+              
+              # Try root health first
+              HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:5001/health || echo "000")
+              echo "Backend health check code: $HTTP_CODE"
+              
+              if [ "$HTTP_CODE" = "200" ]; then
+                echo "✅ Health check PASSED"
+                return 0
+              else
+                # Fallback to /api/health
+                HTTP_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:5001/api/health || echo "000")
+                if [ "$HTTP_CODE" = "200" ]; then
+                   echo "✅ Health check PASSED"
+                   return 0
+                fi
+                echo "❌ Health check FAILED (HTTP $HTTP_CODE)"
+                echo "=== Backend Container Logs ==="
+                docker compose logs --tail=50 backend || true
+                return 1
+              fi
+            }
+
+            # ── Step 5: Rollback function ──
+            rollback() {
+              echo ""
+              echo "🔄 === ROLLING BACK to previous version: $PREVIOUS_COMMIT ==="
+              if [ -z "$PREVIOUS_COMMIT" ]; then
+                echo "No previous commit found. Cannot rollback."
+                exit 1
+              fi
+              git reset --hard $PREVIOUS_COMMIT
+              
+              docker compose down --remove-orphans || true
+              docker compose build
+              docker compose up -d --force-recreate
+              docker image prune -f
+              sleep 15
+              echo "🔄 Rollback complete."
+            }
+
+            # ── Execute ──
+            set +e
+            deploy
+            DEPLOY_EXIT=$?
+            
+            if [ $DEPLOY_EXIT -ne 0 ]; then
+               echo "❌ === BUILD/STARTUP FAILED - ROLLBACK ==="
+               rollback
+               exit 1
+            fi
+
+            if health_check; then
+              echo ""
+              echo "✅ === DEPLOYMENT SUCCESSFUL ==="
+            else
+              echo ""
+              echo "❌ === HEALTH CHECK FAILED - ROLLBACK ==="
+              rollback
+              if health_check; then
+                echo "✅ Rollback successful."
+                exit 1
+              else
+                echo "❌ CRITICAL: Rollback also failed!"
+                exit 1
+              fi
+            fi
+
+            # Ensure Nginx is up (if not in docker)
+            sudo systemctl start nginx 2>/dev/null || true
+            sudo systemctl reload nginx 2>/dev/null || true
+
+            echo ""
+            docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+

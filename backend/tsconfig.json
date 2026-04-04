@@ -1,0 +1,33 @@
+{
+    "compilerOptions": {
+        "target": "es2020",
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "outDir": "./dist",
+        "rootDir": ".",
+        "allowJs": true,
+        "skipLibCheck": true,
+        "esModuleInterop": true,
+        "strict": false,
+        "noEmit": false,
+        "resolveJsonModule": true,
+        "isolatedModules": false,
+        "types": [
+            "node",
+            "jest"
+        ]
+    },
+    "include": [
+        "src/**/*",
+        "prisma/**/*",
+        "tests/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "app",
+        "dist",
+        "src/components",
+        "src/pages",
+        "src/hooks"
+    ]
+}

@@ -1,0 +1,45 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: billsoft-backend
+    ports:
+      - "5055:5001"
+    env_file:
+      - ./backend/.env
+    environment:
+      - DATABASE_URL=file:/app/data/billsoft.db
+      - SERVER_PORT=5001
+      - NODE_ENV=production
+      - FRONTEND_URL=https://billsoft.agbitsolutions.com
+      - BASE_URL=https://billsoft.agbitsolutions.com/api
+      # Explicit overrides only (environment overrides env_file)
+      # These will now prefer backend/.env unless these shell variables are explicitly set
+    volumes:
+      - sqlite_data:/app/data
+      # Bind mount for uploads: files persist on host, survives container rebuilds,
+      # and are proxied to the frontend via Nginx: /uploads/ → backend:5001/uploads/
+      - ./backend/uploads:/app/uploads
+    restart: always
+    healthcheck:
+      test: [ "CMD-SHELL", "wget -qO- http://localhost:5001/api/health || exit 1" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 30s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: billsoft-frontend
+    ports:
+      - "3002:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: always
+
+volumes:
+  sqlite_data: # Note: uploads is a bind mount above (./uploads:/app/uploads), not a named volume

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Systems Upgrade - BillSoft India</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --royal-blue: #3157a2;
+            --yellow: #ffd700;
+            --dark-blue: #1e3a75;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            background-color: #f8faff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+            background: white;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+            border-top: 8px solid var(--royal-blue);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #000;
+        }
+
+        .logo span {
+            color: var(--royal-blue);
+        }
+
+        .status-badge {
+            display: inline-block;
+            background-color: var(--yellow);
+            color: var(--dark-blue);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark-blue);
+            margin-bottom: 16px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #666;
+            margin-bottom: 32px;
+        }
+
+        .icon-container {
+            margin-bottom: 32px;
+        }
+
+        .icon-container svg {
+            width: 120px;
+            height: 120px;
+            fill: var(--royal-blue);
+            animation: pulse 2s infinite ease-in-out;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        .footer {
+            margin-top: 20px;
+            font-size: 0.85rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .progress-bar {
+            height: 6px;
+            width: 100%;
+            background: #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 70%;
+            background: var(--royal-blue);
+            border-radius: 10px;
+            animation: progress 3s infinite ease-in-out;
+        }
+
+        @keyframes progress {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">Bill<span>Soft</span></div>
+        <div class="status-badge">System Upgrade in Progress</div>
+        
+        <div class="icon-container">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12,15.5A3.5,3.5 0 0,1 8.5,12A3.5,3.5 0 0,1 12,8.5A3.5,3.5 0 0,1 15.5,12A3.5,3.5 0 0,1 12,15.5M19.43,12.97C19.47,12.65 19.5,12.33 19.5,12C19.5,11.67 19.47,11.34 19.43,11.03L21.54,9.37C21.73,9.22 21.78,8.97 21.68,8.76L19.68,5.3C19.58,5.09 19.33,5 19.11,5.12L16.63,6.12C16.12,5.73 15.56,5.42 14.95,5.17L14.57,2.53C14.5,2.3 14.3,2.13 14.07,2.13H10.07C9.84,2.13 9.64,2.3 9.57,2.53L9.19,5.17C8.58,5.42 8.02,5.73 7.51,6.12L5.03,5.12C4.81,5.01 4.56,5.09 4.46,5.3L2.46,8.76C2.36,8.97 2.41,9.22 2.6,9.37L4.71,11.03C4.67,11.34 4.64,11.67 4.64,12C4.64,12.33 4.67,12.65 4.71,12.97L2.6,14.63C2.41,14.78 2.36,15.03 2.46,15.24L4.46,18.7C4.56,18.91 4.81,19 5.03,18.88L7.51,17.88C8.02,18.27 8.58,18.58 9.19,18.83L9.57,21.47C9.64,21.7 9.84,21.87 10.07,21.87H14.07C14.3,21.87 14.5,21.7 14.57,21.47L14.95,18.83C15.56,18.58 16.12,18.27 16.63,17.88L19.11,18.88C19.33,19 19.58,18.91 19.68,18.7L21.68,15.24C21.78,15.03 21.73,14.78 21.54,14.63L19.43,12.97Z" />
+            </svg>
+        </div>
+
+        <h1>Enhancing Your Experience</h1>
+        <p>We're currently performing some scheduled maintenance to improve our billing infrastructure. We'll be back online in just a few minutes.</p>
+
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 BillSoft India • Powered by Agb Technologies
+        </div>
+    </div>
+</body>
+</html>

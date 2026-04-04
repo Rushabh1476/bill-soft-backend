@@ -1,0 +1,17 @@
+﻿A  backend/backups/backup-2026-03-21T13-12-55-423Z.db
+A  backend/prisma/dev.db-shm
+A  backend/prisma/dev.db-wal
+M  backend/src/index.ts
+UU frontend/package-lock.json
+UU frontend/src/components/bills/A4BillPreview.tsx
+UU frontend/src/components/templates/CorporateStandardPreview.tsx
+UU frontend/src/modules/billing-templates/previews/A4InvoicePreview.tsx
+UU frontend/src/modules/billing-templates/previews/ClassicProfessionalPreview.tsx
+UU frontend/src/modules/billing-templates/previews/CreativeModernPreview.tsx
+M  frontend/src/modules/billing-templates/previews/MinimalCleanPreview.tsx
+M  frontend/src/modules/billing-templates/previews/SimpleBasicPreview.tsx
+M  frontend/src/pages/Reports.tsx
+UU package-lock.json
+?? status.txt
+?? status_utf8.txt
+?? unmerged_list.txt

@@ -1,0 +1,1420 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ============================================================
+  BillSoft – GST Billing & Invoicing Software
+  Sitemap for: https://billsoft.agbtechnologies.com
+  Powered by: AGB Technologies, Pune, Maharashtra, India
+  Contact: +91 90498 74780 | agbtechnologies247@gmail.com
+  Last Updated: 2026-03-04
+  ============================================================
+  SITEMAP INDEX OVERVIEW
+  ──────────────────────────────────────────────────────────
+  1.  Landing Page & Sections       (Priority 1.0 – 0.7)
+  2.  App – Public Routes           (Priority 0.8)
+  3.  App – Dashboard               (Priority 0.8)
+  4.  App – Bills & Invoices        (Priority 0.9)
+  5.  App – Customers               (Priority 0.8)
+  6.  App – Products & Inventory    (Priority 0.8)
+  7.  App – Suppliers               (Priority 0.7)
+  8.  App – Expenses                (Priority 0.7)
+  9.  App – Reports                 (Priority 0.8)
+  10. App – Templates               (Priority 0.7)
+  11. App – Settings                (Priority 0.6)
+  12. App – Admin Panel             (Priority 0.6)
+  13. Feature Landing Pages         (Priority 0.8)
+  14. Industry-Specific Pages       (Priority 0.8)
+  15. Blog / SEO Keyword Pages      (Priority 0.7)
+  16. Help & Support Pages          (Priority 0.6)
+  ============================================================
+-->
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+  xsi:schemaLocation="
+    http://www.sitemaps.org/schemas/sitemap/0.9
+    http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 1: LANDING PAGE & ALL SECTIONS                     -->
+  <!-- ============================================================ -->
+
+  <!-- Homepage – Top priority, weekly review -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://billsoft.agbtechnologies.com/image%20copy%2011.png</image:loc>
+      <image:title>BillSoft GST Billing Software – Hero Screenshot</image:title>
+    </image:image>
+  </url>
+
+  <!-- Hero Slide 1: Free Demo CTA -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/#hero</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Hero Slide 2: Smart GST Billing Made Simple -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/#gst-billing</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Hero Slide 3: WhatsApp Invoicing -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/#whatsapp-invoicing</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Success Metrics Section -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/#metrics</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Features Section -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/#features</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Branded Invoices / Invoice Formats Section -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/#invoice-formats</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- About Section -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/#about</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Customization / Industry Workflows Section -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/#customization</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Testimonials / Reviews Section -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/#testimonials</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- FAQ Section -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/#faq</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Contact / Live Demo Booking Section -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/#contact</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Footer / Company Info -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/#footer</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 2: APP – PUBLIC ROUTES                             -->
+  <!-- ============================================================ -->
+
+  <!-- Login Page -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/login</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Signup / Free Trial Registration Page -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/signup</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 3: APP – DASHBOARD                                 -->
+  <!-- ============================================================ -->
+
+  <!-- Main Dashboard -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/dashboard</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 4: APP – BILLS & INVOICING MODULE                  -->
+  <!-- ============================================================ -->
+
+  <!-- All Bills / Invoice List -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- New Bill / Create Invoice -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/new</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- View Individual Bill (generic reference) -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/view</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- GST Invoice Creation -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/gst-invoice</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- E-Invoice / IRN Generation -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/e-invoice</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- E-Way Bill Generation -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/e-way-bill</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- WhatsApp Invoice Sharing -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/whatsapp-share</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Thermal Print Bills -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/thermal-print</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- A4 Format Bills -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/a4-format</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- A5 Format Bills -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/a5-format</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Proforma Invoice -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/proforma-invoice</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Credit Note -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/credit-note</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Debit Note -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/debit-note</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Purchase Order -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/purchase-order</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Delivery Challan -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/delivery-challan</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Bill Preview Demo -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/bills/preview-demo</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 5: APP – CUSTOMERS MODULE                          -->
+  <!-- ============================================================ -->
+
+  <!-- Customer List -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/customers</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Add New Customer -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/customers/new</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Customer Search -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/customers/search</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Customer Ledger -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/customers/ledger</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Customer Outstanding Payments -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/customers/outstanding</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Customer Purchase History -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/customers/purchase-history</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 6: APP – PRODUCTS & INVENTORY MODULE               -->
+  <!-- ============================================================ -->
+
+  <!-- Product List -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/products</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Add New Product -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/products/new</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Bulk Product Manager / Import -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/products/bulk-import</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Inventory Tracking -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/products/inventory</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Low Stock Alerts -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/products/low-stock-alerts</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Stock History -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/products/stock-history</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Price List -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/products/price-list</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- HSN / SAC Code Lookup -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/products/hsn-codes</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- GST Rate Configuration -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/products/gst-rates</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 7: APP – SUPPLIERS MODULE                          -->
+  <!-- ============================================================ -->
+
+  <!-- Supplier List -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/suppliers</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Add New Supplier -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/suppliers/new</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Supplier Ledger -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/suppliers/ledger</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Supplier Outstanding Payments -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/suppliers/outstanding</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Purchase Bills from Suppliers -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/suppliers/purchase-bills</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 8: APP – EXPENSE MANAGER MODULE                    -->
+  <!-- ============================================================ -->
+
+  <!-- Expense Manager -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/expenses</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Add New Expense -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/expenses/new</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Expense Categories -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/expenses/categories</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Expense Reports -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/expenses/reports</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Monthly Expense Summary -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/expenses/monthly-summary</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 9: APP – REPORTS MODULE                            -->
+  <!-- ============================================================ -->
+
+  <!-- All Reports -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sales Report -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports/sales</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Purchase Report -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports/purchase</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- GST Report / GSTR-1 -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports/gst</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- GSTR-3B Report -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports/gstr-3b</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Profit & Loss Report -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports/profit-loss</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Inventory Report -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports/inventory</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Customer-wise Sales Report -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports/customer-sales</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Product-wise Sales Report -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports/product-sales</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Outstanding Payments Report -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports/outstanding-payments</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Day Book / Daily Report -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports/day-book</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Cash Flow Report -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports/cash-flow</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Balance Sheet -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/reports/balance-sheet</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 10: APP – INVOICE TEMPLATES MODULE                 -->
+  <!-- ============================================================ -->
+
+  <!-- Template Library -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/templates</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Classic Professional Template -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/templates/classic-professional</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Corporate Standard Template -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/templates/corporate-standard</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Creative Modern Template -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/templates/creative-modern</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- A4 Invoice Preview -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/templates/a4-preview</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Thermal Invoice Templates -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/templates/thermal</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Custom Invoice Builder -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/templates/custom-builder</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 11: APP – SETTINGS MODULE                          -->
+  <!-- ============================================================ -->
+
+  <!-- Settings Overview -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/settings</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- User Settings -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/user-settings</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- User Profile -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/profile</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Business Profile Settings -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/settings/business-profile</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Invoice Settings -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/settings/invoice</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Tax Settings -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/settings/tax</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Notifications Settings -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/settings/notifications</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Appearance Settings -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/settings/appearance</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Security Settings -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/settings/security</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Logo Upload -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/settings/logo</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Column Settings -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/settings/columns</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 12: APP – ADMIN PANEL                              -->
+  <!-- ============================================================ -->
+
+  <!-- Admin Panel -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/admin</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Admin Settings -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/admin/settings</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Admin Security -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/admin/security</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Admin Subscription Management -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/admin/subscription</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Admin User Management -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/admin/users</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Admin Audit Logs -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/admin/audit-logs</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Admin App Settings -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/admin/app-settings</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Admin Analytics -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/admin/analytics</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Admin Feature Flags -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/admin/feature-flags</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Admin Tax Configuration -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/admin/tax</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 13: FEATURE LANDING PAGES                          -->
+  <!--  (SEO-dedicated pages for top keyword rankings)             -->
+  <!-- ============================================================ -->
+
+  <!-- GST Billing Software Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/gst-billing-software</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- E-Invoice Software Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/e-invoice-software</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- E-Way Bill Software Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/e-way-bill-software</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- WhatsApp Billing Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/whatsapp-billing</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Inventory Management Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/inventory-management</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Online Billing Software Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/online-billing-software</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Multi-Format Invoice Printing Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/multi-format-invoice-printing</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Automated Reports Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/automated-reports</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Daily Cloud Backup Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/cloud-data-backup</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Multi-User Access Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/multi-user-access</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Role-Based Access Control Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/role-based-access-control</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Two-Factor Authentication Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/two-factor-authentication</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Recipe Costing (Sweet Shop) Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/recipe-costing</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Marble Slab Management Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/slab-management</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- GST Compliance Feature -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/gst-compliance</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Free Demo Feature / CTA -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/features/free-demo</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 14: INDUSTRY-SPECIFIC PAGES                        -->
+  <!-- ============================================================ -->
+
+  <!-- Billing Software for Retailers -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/retail</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Billing Software for Wholesalers -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/wholesale</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Billing Software for Manufacturers -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/manufacturing</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Sweet Shop Billing Software -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/sweet-shop</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Marble Shop / Stone Industry Billing -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/marble-shop</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Restaurant Billing Software -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/restaurant</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Pharmacy Billing Software -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/pharmacy</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Grocery Store Billing Software -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/grocery</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Hardware / Building Materials Billing -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/hardware-store</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Textile / Garment Industry Billing -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/textile</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Electronics Shop Billing -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/electronics</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Automobile / Auto Parts Billing -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/automobile</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Printing & Stationery Billing -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/industries/printing-stationery</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 15: SEO BLOG / KEYWORD LANDING PAGES               -->
+  <!--  (Target high-intent search queries)                         -->
+  <!-- ============================================================ -->
+
+  <!-- What is GST Billing Software -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/what-is-gst-billing-software</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Best GST Billing Software India 2026 -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/best-gst-billing-software-india-2026</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- How to Generate E-Invoice -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/how-to-generate-e-invoice</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- How to Generate E-Way Bill -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/how-to-generate-e-way-bill</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- GST Invoice Format India -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/gst-invoice-format-india</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Free Billing Software for Small Business -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/free-billing-software-small-business</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- How to Send Invoice via WhatsApp -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/send-invoice-via-whatsapp</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- GST Billing Software for Sweet Shop -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/gst-billing-software-sweet-shop</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- GST Billing Software for Marble Traders -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/gst-billing-software-marble-shop</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Billing Software vs Tally Comparison -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/billsoft-vs-tally-comparison</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- How to Manage Inventory with Billing Software -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/manage-inventory-billing-software</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- GST Billing Software for Retailers in Pune -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/gst-billing-software-pune</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Billing Software with Cloud Backup -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/billing-software-cloud-backup</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- GST Return Filing Guide -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/gst-return-filing-guide</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- E-Invoice vs Physical Invoice -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/e-invoice-vs-physical-invoice</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Best Practices for GST Compliance -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/gst-compliance-best-practices</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- How to Track Overdue Payments -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/track-overdue-payments-billing-software</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Thermal vs A4 Billing for Shops -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/blog/thermal-vs-a4-billing</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+
+  <!-- ============================================================ -->
+  <!--  SECTION 16: HELP, SUPPORT & POLICY PAGES                   -->
+  <!-- ============================================================ -->
+
+  <!-- Help Center / Support -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/help</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Getting Started Guide -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/help/getting-started</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- How to Create First Invoice -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/help/create-first-invoice</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- How to Add Products -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/help/add-products</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- How to Add Customers -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/help/add-customers</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- WhatsApp Integration Guide -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/help/whatsapp-integration</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- E-Invoice Setup Guide -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/help/e-invoice-setup</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- E-Way Bill Setup Guide -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/help/e-way-bill-setup</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+  <!-- Subscription Plans -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/pricing</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Free Trial -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/free-trial</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Book a Demo -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/book-demo</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Contact Us -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/contact</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- About AGB Technologies -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/about</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/privacy-policy</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/terms-of-service</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Refund Policy -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/refund-policy</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Sitemap HTML (human readable) -->
+  <url>
+    <loc>https://billsoft.agbtechnologies.com/sitemap</loc>
+    <lastmod>2026-03-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+
+</urlset>

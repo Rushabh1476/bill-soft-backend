@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: billing-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: billing-backend
+  template:
+    metadata:
+      labels:
+        app: billing-backend
+    spec:
+      containers:
+        - name: billing-backend
+          image: myusername/billing-backend:latest
+          ports:
+            - containerPort: 5001
+          envFrom:
+            - secretRef:
+                name: backend-secrets
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: billing-backend-service
+spec:
+  selector:
+    app: billing-backend
+  ports:
+    - protocol: TCP
+      port: 5001
+      targetPort: 5001

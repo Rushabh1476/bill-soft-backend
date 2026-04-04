@@ -1,0 +1,30 @@
+Final Try Error: 
+Invalid `any).custom_columns.findMany()` invocation in
+D:\backup\merge billsoft\billsoft_saas\backend\src\test-final.ts:8:58
+
+  5 try {
+  6   const userId = 'clf_dummy_user' // Use anything
+  7   console.log('Querying with user_id & is_active (Snake Case)...')
+→ 8   const columns = await (prisma as any).custom_columns.findMany({
+        where: {
+          user_id: "clf_dummy_user",
+          ~~~~~~~
+          is_active: true,
+      ?   AND?: custom_columnsWhereInput | custom_columnsWhereInput[],
+      ?   OR?: custom_columnsWhereInput[],
+      ?   NOT?: custom_columnsWhereInput | custom_columnsWhereInput[],
+      ?   id?: StringFilter | String,
+      ?   userId?: StringFilter | String,
+      ?   name?: StringFilter | String,
+      ?   label?: StringFilter | String,
+      ?   type?: StringFilter | String,
+      ?   entity?: StringFilter | String,
+      ?   required?: BoolFilter | Boolean,
+      ?   isActive?: BoolFilter | Boolean,
+      ?   createdAt?: DateTimeFilter | DateTime,
+      ?   updatedAt?: DateTimeFilter | DateTime,
+      ?   users?: UserScalarRelationFilter | UserWhereInput
+        }
+      })
+
+Unknown argument `user_id`. Did you mean `userId`? Available options are marked with ?.

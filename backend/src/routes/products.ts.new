@@ -1,0 +1,118 @@
+import express from 'express';
+import { authenticateToken, requirePermission } from '../middleware/auth';
+import prisma from '../lib/prisma';
+import { importQueue } from '../lib/importQueue';
+import { processProductImport } from '../workers/importWorker';
+
+const router = express.Router();
+
+/**
+ * @route   POST /api/products/bulk
+ * @desc    Start unique bulk product import job
+ */
+router.post('/bulk', authenticateToken, requirePermission('create_products'), async (req: any, res: any) => {
+  try {
+    const products = req.body;
+    const userId = req.user.orgId;
+    const actorId = req.user.id;
+
+    if (!Array.isArray(products) || products.length === 0) {
+      return res.status(400).json({ error: 'Valid products array is required' });
+    }
+
+    // 1. Create Job record in Database (Requirement #5)
+    const dbJob = await prisma.importJob.create({
+      data: {
+        userId,
+        status: 'pending',
+        totalProducts: products.length,
+        processedProducts: 0
+      }
+    });
+
+    console.log(`[BulkImport] Created DB job: ${dbJob.id}`);
+
+    // 2. Try to add to BullMQ (Background)
+    try {
+      // Short timeout for Redis check (2 seconds)
+      const redisCheck = Promise.race([
+        importQueue.add('bulk-import', { 
+            products, 
+            userId, 
+            actorId, 
+            dbJobId: dbJob.id 
+        }),
+        new Promise((_, reject) => setTimeout(() => reject(new Error('Redis timeout')), 2000))
+      ]);
+      
+      await redisCheck;
+      console.log(`[BulkImport] Successfully queued in BullMQ: ${dbJob.id}`);
+    } catch (bullErr) {
+      console.warn(`[BulkImport] BullMQ/Redis unavailable, falling back to in-process for job: ${dbJob.id}`);
+      
+      // Fallback: Process in background (non-blocking) within this process
+      // We don't await this, so the response returns immediately
+      processProductImport(dbJob.id, products, userId, actorId).catch(err => {
+        console.error(`[BulkImport] Fallback process failed for ${dbJob.id}:`, err);
+      });
+    }
+
+    // Return the DB job ID as the "jobId"
+    res.status(202).json({ 
+      success: true, 
+      jobId: dbJob.id, 
+      message: 'Bulk import started' 
+    });
+
+  } catch (error) {
+    console.error('[BulkImport] Start error:', error);
+    res.status(500).json({ error: 'Failed to start bulk import' });
+  }
+});
+
+/**
+ * @route   GET /api/products/bulk-import/status/:jobId
+ * @desc    Poll status from Database (Requirement #6)
+ */
+router.get('/bulk-import/status/:jobId', authenticateToken, async (req: any, res: any) => {
+  const { jobId } = req.params;
+
+  try {
+    // Read directly from DB for accurate, multi-process, persistent progress
+    const job = await prisma.importJob.findUnique({
+      where: { id: jobId }
+    });
+
+    if (!job) {
+      return res.status(404).json({ error: 'Import job not found' });
+    }
+
+    const total = job.totalProducts;
+    const processed = job.processedProducts;
+    const progress = total > 0 ? Math.floor((processed / total) * 100) : 0;
+
+    return res.json({
+      success: true,
+      jobId: job.id,
+      status: job.status, // running | completed | failed | pending
+      total,
+      processed,
+      progress,
+      errorMessage: job.errorMessage
+    });
+  } catch (error) {
+    console.error('[BulkImport] Status check error:', error);
+    return res.status(500).json({ error: 'Failed to fetch job status' });
+  }
+});
+
+/**
+ * LEGACY / Placeholder SSE Endpoint (Optional, kept for compatibility if needed)
+ */
+router.get('/import/status/:jobId', authenticateToken, async (req: any, res: any) => {
+    res.status(410).json({ error: 'SSE is deprecated. Use GET /api/products/bulk-import/status/:jobId instead.' });
+});
+
+// Other product routes...
+// (I will use multi_replace to keep the existing routes in the actual file)
+export default router;
