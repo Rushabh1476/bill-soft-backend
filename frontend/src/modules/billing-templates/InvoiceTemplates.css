@@ -1,0 +1,1760 @@
+/* InvoiceTemplates.css - Premium Billing Styles - GLOBAL RESET */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+.invoice-container {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    box-sizing: border-box;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+}
+
+.invoice-container {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    box-sizing: border-box;
+    line-height: 1.4;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Base resets to avoid UI bleeding and ensure high visibility */
+.invoice-container *:not(.bg-black):not(.bg-blue-900):not(.bg-blue-700):not(.bg-gray-100) {
+    color: #000000 !important;
+    border-color: #000000 !important;
+    background-color: transparent !important;
+}
+
+.invoice-container .bg-black {
+    background-color: #000 !important;
+    color: #fff !important;
+}
+
+.invoice-container .bg-blue-900 {
+    background-color: #1e3a8a !important;
+    color: #fff !important;
+}
+
+.invoice-container .bg-gray-100 {
+    background-color: #f3f4f6 !important;
+    color: #000 !important;
+}
+
+.invoice-container h1,
+.invoice-container h2,
+.invoice-container h3 {
+    color: #000000 !important;
+    margin: 0;
+}
+
+/* Utilities */
+.bold {
+    font-weight: 700;
+}
+
+.font-black {
+    font-weight: 900;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.mt-4 {
+    margin-top: 1rem;
+}
+
+.mb-4 {
+    margin-bottom: 1rem;
+}
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.italic {
+    font-style: italic;
+}
+
+/* 📏 PHYSICAL PAGE STANDARDS (ISSUE: MARGINS & ALIGNMENTS) */
+.a4-standard-layout {
+    width: 210mm !important;
+    min-height: 297mm !important;
+    padding: 15mm !important;
+    /* Standard Professional Margin */
+    margin: 0 auto !important;
+    position: relative;
+    box-sizing: border-box !important;
+}
+
+.a5-half-layout {
+    width: 148mm !important;
+    min-height: 210mm !important;
+    padding: 10mm !important;
+    /* Compact Professional Margin */
+    margin: 0 auto !important;
+    position: relative;
+    box-sizing: border-box !important;
+}
+
+.thermal-80mm-layout {
+    width: 80mm !important;
+    padding: 4mm !important;
+    /* Minimal Thermal Margin */
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+.thermal-58mm-layout {
+    width: 58mm !important;
+    padding: 2mm !important;
+    /* Tight Thermal Margin */
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+/* Print-Specific Safe Zone (Issue fixed: Missing page margin in print) */
+@media print {
+    @page {
+        margin: 0 !important;
+        /* Let CSS handling margins */
+    }
+
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .invoice-container {
+        box-shadow: none !important;
+        margin: 0 !important;
+        width: 100% !important;
+    }
+}
+
+/* 🚀 SHARED GRID SYSTEM - STRICT LAYOUT STANDARDS (ISSUE 2) */
+.a4-grid-table,
+.invoice-container table {
+    table-layout: fixed !important;
+    width: 100% !important;
+    border-collapse: collapse !important;
+    box-sizing: border-box !important;
+    word-wrap: break-word !important;
+    /* Protect against layout breaking */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* 📏 STRICT COLUMN PROPORTIONS (REQ: Qty/Unit/Rate 10-15%) */
+.invoice-container th,
+.invoice-container td,
+.a4-grid-table th,
+.a4-grid-table td {
+    padding: 8px 4px !important;
+    border: 1px solid #333333 !important;
+    overflow-wrap: break-word !important;
+    vertical-align: top !important;
+    font-size: inherit;
+}
+
+/* S.No - Minimal */
+.col-sn,
+table th:first-child,
+table td:first-child {
+    width: 5% !important;
+}
+
+/* Item Name - Flexible/Maximum */
+.col-item-name,
+.item-name-cell {
+    width: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Numeric Columns - Strict 10-15% */
+.col-qty,
+.col-unit,
+.col-rate,
+.col-tax,
+.col-discount,
+.col-hsn {
+    width: 12% !important;
+    text-align: center;
+}
+
+/* Amount - Fixed */
+.col-amount {
+    width: 14% !important;
+    text-align: center !important;
+}
+
+.invoice-container td {
+    vertical-align: top;
+    text-overflow: ellipsis;
+}
+
+/* Helper column widths for standard POS */
+.w-sn {
+    width: 5%;
+    text-align: center;
+}
+
+.w-item {
+    width: 40%;
+}
+
+.w-hsn {
+    width: 10%;
+    text-align: center;
+}
+
+.w-batch {
+    width: 10%;
+    text-align: center;
+}
+
+.w-exp {
+    width: 8%;
+    text-align: center;
+}
+
+.w-qty {
+    width: 8%;
+    text-align: center;
+}
+
+.w-rate {
+    width: 12%;
+    text-align: center !important;
+}
+
+.w-gst {
+    width: 10%;
+    text-align: center;
+}
+
+.w-amount {
+    width: 15%;
+    text-align: center !important;
+}
+
+/* 🚀 INDUSTRY RE-SKINNING */
+
+/* 1. Modern Blue (Accent Strip Style) */
+.modern-blue-theme .header-accent {
+    background: #1e40af !important;
+    color: #ffffff !important;
+    padding: 15px;
+}
+
+.modern-blue-theme .header-accent * {
+    color: #ffffff !important;
+}
+
+.modern-blue-theme tr:nth-child(even) {
+    background-color: #f9fafb !important;
+}
+
+/* 2. Classic Sharp (Vyapar Styled) */
+.classic-sharp-theme {
+    font-size: 9pt;
+}
+
+.classic-sharp-theme .a4-grid-table,
+.classic-sharp-theme .a4-grid-table th,
+.classic-sharp-theme .a4-grid-table td {
+    border: 0.5pt solid #333333 !important;
+}
+
+/* 3. Pharmacy Details */
+.pharmacy-theme .reg-box {
+    font-size: 7pt;
+    border-bottom: 1px solid #333333;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+/* 4. Food/Restaurant Slim */
+.foodie-theme {
+    max-width: 600px;
+    /* A4 width for print safety, but looks slim */
+    margin: 0 auto;
+}
+
+.foodie-theme .receipt-header {
+    border-bottom: 2px dashed #333333;
+    padding-bottom: 15px;
+}
+
+/* 5. Electronics/Warranty Detail */
+.tech-theme .warranty-box {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #333333;
+    font-size: 8pt;
+}
+
+.tech-theme .imei-label {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 8pt;
+    background: #f3f4f6;
+    display: block;
+    padding: 2px;
+}
+
+/* S.No - Minimal */
+.col-sn {
+    width: 35px !important;
+    text-align: center !important;
+    font-weight: 600;
+}
+
+/* Item Name - Flexible */
+.col-item-name {
+    width: auto;
+    text-align: left;
+}
+
+/* HSN - Standard */
+.col-hsn {
+    width: 70px !important;
+    text-align: center !important;
+    font-family: inherit;
+}
+
+/* Batch/Exp - Standard */
+.col-batch,
+.col-exp {
+    width: 80px !important;
+    text-align: center !important;
+}
+
+/* Unit - Minimal */
+.col-unit {
+    width: 50px !important;
+    text-align: center !important;
+}
+
+/* Qty - Standard */
+.col-qty {
+    width: 60px !important;
+    text-align: center !important;
+    font-weight: 700;
+}
+
+/* Rate - Currency */
+.col-rate {
+    width: 85px !important;
+    text-align: center !important;
+}
+
+/* Tax/Discount - Percentage */
+.col-tax,
+.col-discount {
+    width: 65px !important;
+    text-align: center !important;
+}
+
+/* Amount - Grand Total */
+.col-amount {
+    width: 100px !important;
+    text-align: center !important;
+    font-weight: 800;
+}
+
+/* 🎨 GLOBAL HEADER STYLING (ISSUE: BROKEN ALIGNMENT) */
+.invoice-container thead th {
+    background-color: rgba(0, 0, 0, 0.03) !important;
+    text-transform: uppercase !important;
+    font-weight: 900 !important;
+    font-size: 8pt !important;
+    border-bottom: 2px solid #000 !important;
+    vertical-align: middle !important;
+    letter-spacing: 0.5px;
+}
+
+.market-layout {
+    font-family: 'Inter', sans-serif;
+    color: #111827;
+    font-size: 10px;
+}
+
+.market-layout .header-text {
+    font-size: 12px;
+    font-weight: 700;
+    color: #374151;
+}
+
+.market-layout .body-text {
+    font-size: 10px;
+    color: #4b5563;
+}
+
+.market-layout .total-text {
+    font-size: 14px;
+    font-weight: 900;
+}
+
+.market-layout .border-grid {
+    border: 1px solid #e5e7eb;
+}
+
+.market-layout .col-center {
+    text-align: center;
+}
+
+.market-layout .col-right {
+    text-align: right;
+}
+
+.market-layout table {
+    border: 1px solid #e5e7eb;
+    border-collapse: collapse;
+}
+
+.market-layout th {
+    border: 1px solid #e5e7eb;
+    padding: 6px;
+    background-color: #f9fafb;
+    font-size: 10px;
+    text-transform: uppercase;
+}
+
+.market-layout td {
+    border: 1px solid #e5e7eb;
+    padding: 6px;
+    font-size: 10px;
+}
+
+/* 🚀 Industry Unique Scoping Classes (Avoid Style Bleeding) */
+
+/* 1. Pharmacy Regulatory Style (Marg/Tally) */
+.pharmacy-theme {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: #1f2937;
+}
+
+.pharmacy-theme table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.pharmacy-theme th {
+    background: #f3f4f6;
+    border: 1px solid #d1d5db;
+    padding: 4px;
+    text-transform: uppercase;
+    font-weight: 700;
+    border-right: 1px solid #d1d5db;
+}
+
+.pharmacy-theme td {
+    border: 1px solid #d1d5db;
+    padding: 4px;
+}
+
+.pharmacy-theme .warning-box {
+    border: 1px solid #ef4444;
+    color: #ef4444;
+    padding: 4px;
+    font-weight: 700;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* 2. Restaurant Hospitality Style */
+.restaurant-theme {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    max-width: 280px;
+    margin: 0 auto;
+    line-height: 1.2;
+}
+
+.restaurant-theme .separator {
+    border-top: 1px dashed #94a3b8;
+    margin: 8px 0;
+}
+
+.restaurant-theme .total-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: right;
+}
+
+.restaurant-theme .header-info {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+/* 3. Grocery Fast Retail Style */
+.retail-theme {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    line-height: 1.2;
+}
+
+.retail-theme .item-row {
+    border-bottom: 1px solid #f1f5f9;
+    padding: 6px 0;
+}
+
+.retail-theme .savings-badge {
+    background: #dcfce7;
+    color: #14532d;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 9px;
+}
+
+/* 4. Electronics Asset Warranty Style (Tech) */
+.tech-theme {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+}
+
+.tech-theme th {
+    border-bottom: 2px solid #1e3a8a;
+    padding: 10px;
+    font-weight: 900;
+    background: #f8fafc;
+}
+
+.tech-theme td {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 10px;
+    vertical-align: top;
+}
+
+.tech-theme .imei-sn {
+    color: #1e40af;
+    font-weight: 700;
+    font-size: 9px;
+    margin-top: 6px;
+    background: #eff6ff;
+    padding: 4px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* 5. Fashion Boutique Elegant Style */
+.fashion-theme {
+    font-family: 'Outfit', sans-serif;
+    font-size: 11px;
+    font-style: italic;
+}
+
+.fashion-theme .vertical-divider {
+    border-left: 1px solid #e2e8f0;
+    padding-left: 12px;
+}
+
+.fashion-theme .premium-tag {
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #db2777;
+    font-weight: 900;
+}
+
+.fashion-theme th {
+    border-bottom: 2px solid #f9a8d4;
+    color: #db2777;
+    padding: 12px 0;
+    text-align: left;
+}
+
+.fashion-theme td {
+    padding: 12px 0;
+    border-bottom: 1px solid #fdf2f8;
+}
+
+/* 6. Medical/Wholesale Detailed A4 Style (Wholesale Distribution) */
+.wholesale-medical-theme {
+    font-family: 'Inter', sans-serif;
+    font-size: 10pt;
+    color: #000;
+    line-height: 1.2;
+    background: #fff;
+}
+
+.wholesale-medical-theme .header-title {
+    font-size: 12pt;
+    font-weight: 900;
+    text-align: center;
+    border: 1px solid #000;
+    padding: 4px;
+    margin-bottom: 0;
+}
+
+.wholesale-medical-theme .border-all {
+    border: 1px solid #000;
+}
+
+.wholesale-medical-theme .border-b {
+    border-bottom: 1px solid #000;
+}
+
+.wholesale-medical-theme .border-r {
+    border-right: 1px solid #000;
+}
+
+.wholesale-medical-theme .p-2 {
+    padding: 4px;
+}
+
+.wholesale-medical-theme table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+.wholesale-medical-theme th,
+.wholesale-medical-theme td {
+    border: 1px solid #000;
+    padding: 4px;
+    font-size: 8pt;
+    vertical-align: top;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.wholesale-medical-theme th {
+    font-weight: 900;
+    text-align: center;
+}
+
+.wholesale-medical-theme .text-right {
+    text-align: right;
+}
+
+.wholesale-medical-theme .text-center {
+    text-align: center;
+}
+
+.wholesale-medical-theme .bold {
+    font-weight: 900;
+}
+
+.wholesale-medical-theme .italic {
+    font-style: italic;
+}
+
+.wholesale-medical-theme .section-half {
+    width: 50%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* 11. PHARMACY PRINT STANDARD (V3) - Dot-Matrix / Indian Medical Style */
+.pharmacy-print-theme {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #000;
+    line-height: 1.1;
+    background: #fff;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.pharmacy-print-theme .compact-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 9px;
+    margin-bottom: 2px;
+}
+
+.pharmacy-print-theme .center-header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.pharmacy-print-theme .company-title {
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.pharmacy-print-theme .address-text {
+    font-size: 10px;
+    margin-bottom: 2px;
+}
+
+.pharmacy-print-theme .divider-thin {
+    border-top: 0.5pt solid #000;
+    margin: 4px 0;
+}
+
+.pharmacy-print-theme table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 0.5pt solid #000;
+}
+
+.pharmacy-print-theme th,
+.pharmacy-print-theme td {
+    border: 0.5pt solid #000;
+    padding: 2px 4px;
+    vertical-align: top;
+}
+
+.pharmacy-print-theme th {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 10px;
+    text-align: center;
+}
+
+.pharmacy-print-theme .text-right {
+    text-align: right;
+}
+
+.pharmacy-print-theme .text-center {
+    text-align: center;
+}
+
+.pharmacy-print-theme .grand-total {
+    font-weight: 700;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 2px 0;
+}
+
+.pharmacy-print-theme .footer-text {
+    font-size: 9px;
+    margin-top: 10px;
+}
+
+.pharmacy-print-theme .sign-line {
+    border-top: 0.5pt solid #000;
+    width: 120px;
+    margin-top: 40px;
+    text-align: center;
+    font-size: 9px;
+}
+
+@media print {
+    .pharmacy-print-theme {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+/* 10. REALISTIC PRINT THEME (V2) - Minimal, No-UI style */
+.real-print-theme {
+    font-family: 'Inter', sans-serif;
+    font-size: 10pt;
+    color: #000;
+    line-height: 1.2;
+    background: #fff;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+
+.real-print-theme .dashed-divider {
+    border-top: 1px dashed #000;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.real-print-theme table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.real-print-theme th {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 4px;
+    font-weight: 700;
+    text-align: left;
+}
+
+.real-print-theme td {
+    padding: 4px;
+    vertical-align: top;
+}
+
+.real-print-theme .text-right {
+    text-align: right;
+}
+
+.real-print-theme .bold {
+    font-weight: 700;
+}
+
+.real-print-theme .thermal-font {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 9pt;
+}
+
+.real-print-theme .payment-box {
+    border: 1px solid #000;
+    padding: 8px;
+    margin-top: 12px;
+}
+
+.real-print-theme .signature-box {
+    border-top: 1px solid #000;
+    width: 180px;
+    margin-top: 50px;
+    padding-top: 4px;
+    text-align: center;
+}
+
+@media print {
+    .real-print-theme {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    .thermal-small-receipt {
+        width: 80mm !important;
+    }
+}
+
+/* 8. Textile / Cloth Shop Elegant Style */
+.textile-theme {
+    font-family: 'Inter', sans-serif;
+    font-size: 10pt;
+    color: #000;
+    line-height: 1.3;
+}
+
+.textile-theme th {
+    border-bottom: 2px solid #000;
+    padding: 6px;
+    font-weight: 800;
+    background: #fdfdfd;
+}
+
+.textile-theme td {
+    border-bottom: 1px dotted #e5e7eb;
+    padding: 6px;
+}
+
+.textile-theme .item-meter {
+    font-size: 8pt;
+    color: #4b5563;
+    font-weight: 600;
+    margin-top: 4px;
+    display: block;
+}
+
+/* 9. General Store Robust Style */
+.general-theme {
+    font-family: 'Inter', sans-serif;
+    font-size: 10pt;
+    color: #1f2937;
+}
+
+.general-theme .bill-box {
+    border: 1px solid #111827;
+    padding: 12px;
+}
+
+.general-theme .table-header {
+    background: #111827;
+    color: #fff;
+    padding: 8px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.general-theme th {
+    background: #111827;
+    color: #fff;
+    font-size: 9pt;
+    padding: 6px;
+    border: 1px solid #111827;
+}
+
+.general-theme td {
+    border: 1px solid #e5e7eb;
+    padding: 6px;
+}
+
+/* 7. GMED Enterprises Pixel-Perfect A4 Style (Wholesale Distribution) */
+.gmed-theme {
+    font-family: 'Inter', sans-serif;
+    font-size: 8pt;
+    color: #000;
+    line-height: 1.1;
+    background: #fff;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.gmed-theme .tax-header {
+    font-size: 16pt;
+    font-weight: 950;
+    text-align: center;
+    border-bottom: 2px solid #000;
+    padding: 8px 0;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.gmed-theme .company-name {
+    font-size: 14pt;
+    font-weight: 950;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.gmed-theme .border-all {
+    border: 1px solid #000;
+}
+
+.gmed-theme .border-b {
+    border-bottom: 1px solid #000;
+}
+
+.gmed-theme .border-t {
+    border-top: 1px solid #000;
+}
+
+.gmed-theme .border-r {
+    border-right: 1px solid #000;
+}
+
+.gmed-theme .border-l {
+    border-left: 1px solid #000;
+}
+
+.gmed-theme .no-round {
+    border-radius: 0 !important;
+}
+
+.gmed-theme .p-1 {
+    padding: 4px;
+}
+
+.gmed-theme .p-2 {
+    padding: 8px;
+}
+
+.gmed-theme table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+.gmed-theme th,
+.gmed-theme td {
+    border: 1px solid #000;
+    padding: 4px;
+    font-size: 8pt;
+    vertical-align: top;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+.gmed-theme th {
+    font-weight: 950;
+    text-align: center;
+    background: #f9fafb;
+    text-transform: uppercase;
+}
+
+.gmed-theme .text-right {
+    text-align: right;
+}
+
+.gmed-theme .text-center {
+    text-align: center;
+}
+
+.gmed-theme .bold {
+    font-weight: 800;
+}
+
+.gmed-theme .font-950 {
+    font-weight: 950;
+}
+
+.gmed-theme .transport-block {
+    border: 1px solid #000;
+    border-top: 0;
+    padding: 4px;
+    font-size: 7pt;
+    font-weight: 950;
+    text-transform: uppercase;
+    background: #ffffff;
+}
+
+.gmed-theme .summary-box {
+    font-size: 7.5pt;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+@media print {
+    .invoice-container {
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .a4-standard-layout,
+    .large-a4-layout {
+        width: 210mm;
+        height: 297mm;
+        page-break-after: always;
+    }
+}
+
+/* 12. Tally-Prime Standard A4 Style */
+.tally-theme {
+    font-family: 'Inter', 'Roboto', sans-serif;
+    font-size: 9pt;
+    color: #000;
+    line-height: 1.2;
+    background: #fff;
+}
+
+.tally-theme .border-black {
+    border: 1px solid #000;
+}
+
+.tally-theme .border-b-black {
+    border-bottom: 2px solid #000;
+}
+
+.tally-theme .border-r-black {
+    border-right: 1px solid #000;
+}
+
+.tally-theme .text-left {
+    text-align: left !important;
+}
+
+.tally-theme .text-right {
+    text-align: right !important;
+}
+
+.tally-theme .text-center {
+    text-align: center !important;
+}
+
+.tally-theme .bold {
+    font-weight: 700;
+}
+
+.tally-theme table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #000;
+}
+
+.tally-theme th,
+.tally-theme td {
+    border: 1px solid #000;
+    padding: 4px;
+}
+
+.tally-theme th {
+    background: #f2f2f2;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-align: center;
+}
+
+.tally-theme footer {
+    margin-top: 10px;
+}
+
+@media print {
+    .tally-theme {
+        width: 210mm;
+        height: 297mm;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+}
+
+/* 13. Modern Blue (Play Store Standard / MyBillBook Inspired) */
+.modern-blue-theme {
+    font-family: 'Inter', sans-serif;
+    font-size: 10pt;
+    color: #000 !important;
+    background: #fff !important;
+}
+
+.modern-blue-theme .header-strip {
+    border-bottom: 4px solid #000 !important;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modern-blue-theme .stripe-row:nth-child(even) {
+    background-color: #f8fafc !important;
+}
+
+.modern-blue-theme .summary-box {
+    border: 2px solid #000 !important;
+    padding: 15px;
+    border-radius: 4px;
+    background: #fff !important;
+}
+
+.modern-blue-theme table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.modern-blue-theme th {
+    background: #f3f4f6 !important;
+    color: #000 !important;
+    font-weight: 800;
+    text-transform: uppercase;
+    border: 1px solid #000 !important;
+    padding: 10px;
+    text-align: center !important;
+}
+
+.modern-blue-theme td {
+    padding: 10px;
+    border: 1px solid #000 !important;
+    vertical-align: middle;
+    text-align: center !important;
+}
+
+/* 14. Classic Sharp (Vyapar Inspired) */
+.classic-sharp-theme {
+    font-family: 'Inter', sans-serif;
+    font-size: 9pt;
+    color: #000 !important;
+    background: #fff !important;
+}
+
+.classic-sharp-theme table {
+    border: 2px solid #000 !important;
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.classic-sharp-theme th,
+.classic-sharp-theme td {
+    border: 1px solid #000 !important;
+    padding: 4px;
+}
+
+.classic-sharp-theme th {
+    background: #e5e7eb !important;
+    font-weight: 900;
+    text-align: center;
+}
+
+.classic-sharp-theme .header-box {
+    border: 1px solid #000;
+    padding: 8px;
+}
+
+.classic-sharp-theme .bold {
+    font-weight: 900;
+}
+
+/* 15. Compact Foodie (Restaurant Market Style / Thermax Standard) */
+.foodie-theme {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 9pt;
+    color: #000 !important;
+    background: #fff !important;
+    line-height: 1.3;
+}
+
+.foodie-theme th {
+    white-space: nowrap !important;
+    background-color: #f2f2f2 !important;
+    color: #000 !important;
+    text-transform: uppercase;
+    font-weight: 900 !important;
+    border: 1px solid #000 !important;
+}
+
+.foodie-theme td {
+    border: 1px solid #000 !important;
+    color: #000 !important;
+}
+
+.foodie-theme .receipt-header {
+    border: 2px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.foodie-theme .total-payable {
+    font-size: 16pt;
+    font-weight: 950;
+    color: #fff !important;
+    background-color: #000 !important;
+    padding: 10px;
+    text-align: center;
+    border: 2px solid #000;
+}
+
+.foodie-theme .table-no-badge {
+    border: 2px solid #000;
+    color: #000;
+    padding: 2px 10px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 10pt;
+}
+
+.foodie-theme .summary-label {
+    background-color: #f9fafb !important;
+    font-weight: 700;
+    text-align: right;
+    text-transform: uppercase;
+    font-size: 8pt;
+}
+
+.foodie-theme .summary-value {
+    font-weight: 950;
+    text-align: center;
+    font-size: 10pt;
+}
+
+.foodie-theme .dashed-divider {
+    border-top: 2px dashed #000;
+    margin: 15px 0;
+}
+
+/* 16. Architect Thermal Layout (80mm / 58mm) */
+.architect-thermal-theme {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 10pt;
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    max-width: 80mm;
+    margin: 0 auto;
+    padding: 10mm 4mm;
+    line-height: 1.2;
+    overflow: visible !important;
+}
+
+.architect-thermal-theme .receipt-separator {
+    border-bottom: 1px dashed #000 !important;
+    margin: 8px 0;
+    width: 100%;
+}
+
+.architect-thermal-theme .header-info {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.architect-thermal-theme .header-info .shop-name {
+    font-size: 14pt;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.architect-thermal-theme .item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+
+.architect-thermal-theme .item-name {
+    flex: 1;
+    text-align: left;
+    padding-right: 8px;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
+.architect-thermal-theme .item-price-qty {
+    text-align: right;
+    white-space: nowrap;
+    font-weight: 700;
+}
+
+.architect-thermal-theme .total-section {
+    margin-top: 8px;
+}
+
+.architect-thermal-theme .total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 2px;
+}
+
+.architect-thermal-theme .grand-total {
+    font-size: 14pt;
+    font-weight: 900;
+    border-top: 1px dashed #000;
+    padding-top: 8px;
+    margin-top: 8px;
+}
+
+/* 17. Retail Advanced Premium Style (Market-Leading Design) */
+.retail-advanced-theme {
+    font-family: 'Inter', sans-serif;
+    color: #111827 !important;
+    background-color: #ffffff !important;
+}
+
+.retail-advanced-theme .premium-accent {
+    height: 6px;
+    background: linear-gradient(90deg, #10B981 0%, #3B82F6 100%);
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 24px;
+}
+
+.retail-advanced-theme .store-brand {
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -0.05em;
+    color: #111827 !important;
+}
+
+.retail-advanced-theme .glass-card {
+    background: rgba(249, 250, 251, 0.5);
+    border: 1px solid #f3f4f6;
+    border-radius: 16px;
+    padding: 20px;
+}
+
+.retail-advanced-theme .table-modern {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border: 1px solid #f3f4f6 !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+.retail-advanced-theme .table-modern th {
+    background: #f9fafb !important;
+    padding: 12px 12px !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    font-size: 10px !important;
+    color: #6b7280 !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    text-align: center !important;
+    /* Default center for all headers */
+}
+
+.retail-advanced-theme .table-modern td {
+    padding: 14px 12px !important;
+    border-bottom: 1px solid #f9fafb !important;
+    font-size: 13px !important;
+    color: #1f2937 !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+    /* 🎯 AS REQUESTED: Center text by default */
+}
+
+.retail-advanced-theme .table-modern td.col-item-name {
+    text-align: left !important;
+    /* Exception for item name */
+}
+
+.retail-advanced-theme .table-modern td.col-amount {
+    text-align: right !important;
+    /* Exception for amount */
+}
+
+.retail-advanced-theme .total-container {
+    background: #111827;
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 30px;
+    color: #ffffff !important;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.retail-advanced-theme .total-container * {
+    color: #ffffff !important;
+}
+
+.retail-advanced-theme .badge-premium {
+    display: inline-block;
+    padding: 4px 10px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6b7280 !important;
+}
+
+.retail-advanced-theme .qr-container {
+    border: 2px solid #f3f4f6;
+    border-radius: 12px;
+    padding: 8px;
+    background: #fff;
+
+    display: inline-block;
+}
+
+/* 18. Service Provider & Consulting Modern Styles */
+.service-pro-theme {
+    font-family: 'Inter', sans-serif;
+    color: #0f172a !important;
+    background-color: #ffffff !important;
+}
+
+.service-pro-theme .service-sidebar {
+    background: #f8fafc;
+    border-right: 1px solid #e2e8f0;
+    padding: 30px;
+    height: 100%;
+}
+
+.service-pro-theme .accent-line {
+    width: 40px;
+    height: 4px;
+    background: #3b82f6;
+    margin-bottom: 20px;
+}
+
+.service-pro-theme .table-clean {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-bottom: 40px;
+}
+
+.service-pro-theme .table-clean th {
+    padding: 16px !important;
+    text-align: center !important;
+    /* 🎯 AS REQUESTED: Center text in columns */
+    font-weight: 800 !important;
+    font-size: 11px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    color: #64748b !important;
+    border-bottom: 2px solid #f1f5f9 !important;
+}
+
+.service-pro-theme .table-clean td {
+    padding: 20px 16px !important;
+    text-align: center !important;
+    /* 🎯 AS REQUESTED: Center text in columns */
+    font-size: 14px !important;
+    border-bottom: 1px solid #f8fafc !important;
+    vertical-align: top !important;
+}
+
+.service-pro-theme .table-clean td.col-description {
+    text-align: left !important;
+    /* Keep description left-aligned for readability */
+}
+
+.service-pro-theme .service-footer-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.service-pro-theme .consultant-badge {
+    background: #e0f2fe;
+    color: #0369a1 !important;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.service-pro-theme .total-summary-card {
+    background: #0f172a;
+    color: #ffffff !important;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+/* 19. Healthcare Advanced Premium Style */
+.healthcare-advanced-theme {
+    font-family: 'Inter', sans-serif !important;
+    background-color: #ffffff !important;
+}
+
+.healthcare-advanced-theme .medical-top-bar {
+    height: 8px;
+    background: #0d9488;
+    width: 100%;
+    margin-bottom: 24px;
+    border-radius: 10px;
+}
+
+.healthcare-advanced-theme .rx-badge {
+    background: #0d9488;
+    color: #fff !important;
+    font-weight: 900;
+    padding: 10px 18px;
+    border-radius: 8px 30px 30px 8px;
+    font-size: 20px;
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+.healthcare-advanced-theme .medical-header {
+    background: #f0fdfa;
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid #ccfbf1;
+}
+
+.healthcare-advanced-theme .table-healthcare {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+}
+
+.healthcare-advanced-theme .table-healthcare th {
+    background: #f8fafc !important;
+    padding: 16px 12px !important;
+    color: #64748b !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    text-align: center !important;
+    /* 🎯 AS REQUESTED: Center text by default */
+}
+
+.healthcare-advanced-theme .table-healthcare td {
+    padding: 18px 12px !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    font-size: 14px !important;
+    color: #1e293b !important;
+    vertical-align: middle !important;
+    text-align: center !important;
+    /* 🎯 AS REQUESTED: Center text by default */
+}
+
+.healthcare-advanced-theme .table-healthcare td.col-med-name {
+    text-align: left !important;
+}
+
+.healthcare-advanced-theme .total-health-card {
+    background: linear-gradient(135deg, #0d9488 0%, #0f766e 100%);
+    border-radius: 24px;
+    padding: 30px;
+    color: #ffffff !important;
+    box-shadow: 0 20px 25px -5px rgba(13, 148, 136, 0.2);
+}
+
+.healthcare-advanced-theme .total-health-card * {
+    color: #ffffff !important;
+}
+
+.healthcare-advanced-theme .dl-badge {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+    background: #f1f5f9;
+    color: #475569 !important;
+}
+
+.service-pro-theme .total-summary-card * {
+    color: #ffffff !important;
+}
+
+/* 20. Education Standard Premium Style */
+.education-theme {
+    font-family: 'Outfit', sans-serif !important;
+    background-color: #ffffff !important;
+}
+
+.education-theme .academic-header {
+    background: #fffbeb;
+    border: 2px solid #fde68a;
+    border-radius: 24px;
+    padding: 30px;
+}
+
+.education-theme .school-crest {
+    width: 60px;
+    height: 60px;
+    background: #b45309;
+    color: #fff !important;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 30px;
+}
+
+.education-theme .table-academic {
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border: 1px solid #e5e7eb !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+}
+
+.education-theme .table-academic th {
+    background: #78350f !important;
+    color: #ffffff !important;
+    padding: 14px 10px !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    text-align: center !important;
+    /* 🎯 AS REQUESTED: Center text */
+}
+
+.education-theme .table-academic td {
+    padding: 16px 10px !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    font-size: 13px !important;
+    color: #451a03 !important;
+    text-align: center !important;
+    /* 🎯 AS REQUESTED: Center text */
+}
+
+.education-theme .table-academic td.col-fee-head {
+    text-align: left !important;
+    font-weight: 700 !important;
+}
+
+.education-theme .fee-total-card {
+    background: #78350f;
+    color: #ffffff !important;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 10px 15px -3px rgba(120, 53, 15, 0.2);
+}
+
+.education-theme .fee-total-card * {
+    color: #ffffff !important;
+}
+
+.education-theme .stamp-seal {
+    width: 100px;
+    height: 100px;
+    border: 2px dashed #d1d5db;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #d1d5db !important;
+    font-size: 7px;
+    text-transform: uppercase;
+    font-weight: 800;
+    margin: 0 auto;
+}
+
+/* 21. Consulting Pro Premium Style */
+.consulting-theme {
+    font-family: 'Inter', sans-serif !important;
+    background-color: #ffffff !important;
+}
+
+.consulting-theme .corporate-top-accent {
+    height: 12px;
+    background: #1e1b4b;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.consulting-theme .project-badge {
+    background: #e0e7ff;
+    color: #3730e3 !important;
+    font-size: 10px;
+    font-weight: 900;
+    padding: 4px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: inline-block;
+}
+
+.consulting-theme .table-consulting {
+    width: 100% !important;
+    border-collapse: collapse !important;
+}
+
+.consulting-theme .table-consulting th {
+    background: #f8fafc !important;
+    border-bottom: 2px solid #1e1b4b !important;
+    padding: 16px 12px !important;
+    color: #1e1b4b !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+    /* 🎯 AS REQUESTED: Center text */
+}
+
+.consulting-theme .table-consulting td {
+    padding: 20px 12px !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    font-size: 14px !important;
+    color: #334155 !important;
+    text-align: center !important;
+    /* 🎯 AS REQUESTED: Center text */
+}
+
+.consulting-theme .table-consulting td.col-service-desc {
+    text-align: left !important;
+    font-weight: 500 !important;
+}
+
+.consulting-theme .consulting-total-card {
+    background: #1e1b4b;
+    border-radius: 12px;
+    padding: 24px;
+    color: #ffffff !important;
+}
+
+.consulting-theme .consulting-total-card * {
+    color: #ffffff !important;
+}
+
+.consulting-theme .exp-breakdown {
+    background: #fdfdfd;
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    padding: 20px;
+}

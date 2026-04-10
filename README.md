@@ -1,0 +1,122 @@
+# BillSoft SaaS
+
+BillSoft SaaS is a modern billing and invoicing platform built with a full-stack architecture.
+
+## Tech Stack
+
+### Frontend
+- **Framework:** React with TypeScript
+- **Styling/UI:** Material UI (MUI), Emotion
+- **State/Data Management:** React Hook Form, Axios
+- **Testing:** Playwright (E2E)
+
+### Backend
+- **Framework:** Node.js with Express & TypeScript
+- **Database ORM:** Prisma
+- **Validation:** Zod
+- **Authentication:** JWT (JSON Web Tokens) & bcryptjs
+- **Testing:** Jest
+
+## Setup Instructions
+
+### Prerequisites
+- [Node.js](https://nodejs.org/)
+- Database supported by Prisma (e.g., PostgreSQL/MySQL)
+
+### Installation
+
+1. **Clone the repository** (if you haven't already):
+   ```sh
+   git clone -b rushbh https://github.com/agbitsolutions/billsoft_saas.git .
+   ```
+
+2. **Install dependencies**:
+   Run `npm install` inside both the `frontend` and `backend` directories.
+   
+3. **Environment Setup**:
+   Create a `.env` file in the root and in the `backend` directory according to your database connection strings and JWT secrets.
+
+### Running the App
+
+## Production Deployment & Maintenance
+
+The application includes a robust deployment workflow designed for production environments.
+
+### Deployment Script
+We use a custom `deploy.sh` script located in the `scripts/` directory to handle updates safely.
+
+**Key Features:**
+- **Automated Backup**: Automatically creates a timestamped SQLite snapshot before any changes.
+- **Maintenance Mode**: Switches the site to a branded "System Upgrade" page while containers rebuild.
+- **Data Integrity**: Uses `git reset --hard` to ensure the production environment exactly matches the main branch.
+- **Cleanup**: Retains only the last 10 database backups to save space.
+
+### How to Deploy
+To update the production environment:
+```sh
+# Give execution permission (one-time)
+chmod +x scripts/deploy.sh
+
+# Run the deployment
+./scripts/deploy.sh
+```
+
+### Manual Maintenance Mode
+If you need to manually put the site in maintenance mode:
+```sh
+docker-compose -f docker-compose.maintenance.yml up -d
+```
+To resume live operations:
+```sh
+docker-compose -f docker-compose.maintenance.yml down
+docker-compose up -d
+```
+
+The application is deployed to: **http://billsoft.agbtechnologies.com**
+
+### Key Configuration
+- **Frontend Port**: 3002 (Mapped from 80 inside container)
+- **Backend Port**: 5001
+- **Database**: SQLite (Persistent via Docker Volume)
+
+### Data Persistence & Security
+- **Database Storage**: Data is stored in a named Docker volume `sqlite_data`. This ensures the SQLite database file remains safe even if containers are stopped or updated.
+- **Environment Variables**: Sensitive data is managed via the `.env` file on the VPS. Never commit this file to Git.
+- **CORS**: The backend is configured to only allow requests from the official production domain.
+
+### Accessing Signup
+The signup page is accessible at: **http://billsoft.agbtechnologies.com/signup**
+
+The project comes with a concurrently script defined in the root to run both the frontend and backend simultaneously.
+
+To run the full stack in development mode from the root directory:
+```sh
+npm run dev:full
+```
+
+Alternatively, you can run them individually:
+
+**Backend:**
+```sh
+cd backend
+npm run dev
+```
+
+**Frontend:**
+```sh
+cd frontend
+npm start
+```
+
+## Testing
+
+**Backend Tests (Jest):**
+```sh
+npm run test --prefix backend
+```
+
+**Frontend Tests:**
+```sh
+cd frontend
+npm run test:e2e
+```

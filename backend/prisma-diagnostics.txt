@@ -1,0 +1,9 @@
+{
+  "has_custom_columns": true,
+  "has_CustomColumns": false,
+  "has_customcolumns": false,
+  "keys": [
+    "custom_columns",
+    "user"
+  ]
+}

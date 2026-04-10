@@ -1,0 +1,56 @@
+name: 🚀 Deploy to Production VPS
+
+on:
+  push:
+    branches:
+      - ready-for-vps
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: 🔍 Validate Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: cd backend && npm install --legacy-peer-deps && npx prisma generate
+      - run: cd frontend && npm install --legacy-peer-deps && npm run build
+
+  deploy:
+    name: 🚢 Deploy on VPS
+    runs-on: self-hosted
+    needs: validate
+    steps:
+      - name: 📥 Get Latest Code
+        uses: actions/checkout@v4
+        with:
+          clean: true
+
+      - name: 🚀 Sync & Docker Deploy
+        run: |
+          DEPLOY_DIR="/home/agbdevops/billsoft/billsoft_saas"
+          echo "🔄 Syncing files to $DEPLOY_DIR..."
+          
+          # Use rsync to move the checked-out code to the main folder
+          rsync -avz --exclude '.git' ./ "$DEPLOY_DIR/"
+          
+          cd "$DEPLOY_DIR"
+          
+          echo "🐳 Starting Docker Build & Deploy..."
+          docker compose down --timeout 30 || true
+          docker compose build --no-cache
+          docker compose up -d
+
+          echo "⏳ Waiting 20s for health check..."
+          sleep 20
+          
+          echo "🗄️ Running migrations..."
+          docker exec billsoft-backend npx prisma migrate deploy || echo "Migration skipped"
+          
+          echo "🧹 Cleanup..."
+          docker image prune -f
+          
+          echo "✅ Deployment Successful!"
